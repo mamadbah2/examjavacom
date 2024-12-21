@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane xmlns:fx="http://javafx.com/fxml"
+    fx:controller="exam.controllers.CommandeController">
+    <Tab text="Gestion des Commades">
+        <VBox spacing="10">
+            <HBox spacing="10">
+                <TextField fx:id="clientTelephone" promptText="Téléphone du client" />
+                <DatePicker fx:id="commandetDate" disable="true" promptText="Date" />
+                <Button text="Chercher Client" onAction="#search" />
+                <TextField fx:id="commandetAmount" disable="true" promptText="Montant" />
+            </HBox>
+            <TableView disable="true" fx:id="commandetArticlesTable">
+                <columns>
+                    <TableColumn fx:id="colLibelle" text="Article" />
+                    <TableColumn fx:id="colQte" text="Quantité" />
+                    <TableColumn fx:id="colPrix" text="Prix" />
+
+                </columns>
+            </TableView>
+            <HBox spacing="10">
+                <TextField fx:id="articleName" promptText="Nom de l'article" />
+                <TextField fx:id="articleQuantity" promptText="Quantité" />
+                <TextField fx:id="articlePrice" disable="true" promptText="Prix" />
+               
+            </HBox>
+            <Button fx:id="btnAjout" disable="true" text="Ajouter Article" onAction="#addArticleTocommandet" />
+            <Button fx:id="btnEnregistrer" disable="true" text="Créer Commande" onAction="#createcommande" />
+        </VBox>
+    </Tab>
+
+</TabPane>
